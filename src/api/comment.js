@@ -1,18 +1,18 @@
 import request from '@/utils/request'
 
-const AUTH_URL = '/auth'
+const SHOP_URL = '/shop'
 
 export function fetchList(query) {
   return request({
-    url: AUTH_URL + '/user',
+    url: SHOP_URL + '/comment',
     method: 'get',
     params: query
   })
 }
 
-export function fetchArticle(id) {
+export function fetchComment(id) {
   return request({
-    url: AUTH_URL + '/user/' + id,
+    url: SHOP_URL + '/comment/' + id,
     method: 'get'
   })
 }
@@ -25,25 +25,25 @@ export function fetchPv(pv) {
   })
 }
 
-export function createArticle(data) {
+export function createComment(data) {
   return request({
-    url: AUTH_URL + '/user',
+    url: SHOP_URL + '/comment',
     method: 'post',
     data
   })
 }
 
-export function updateArticle(data) {
+export function updateComment(data) {
   return request({
-    url: AUTH_URL + '/user',
+    url: SHOP_URL + '/comment',
     method: 'put',
     data
   })
 }
 
-export function deleteUser(id) {
+export function deleteComment(id) {
   return request({
-    url: AUTH_URL + '/user/' + id,
+    url: SHOP_URL + '/comment/' + id,
     method: 'delete'
   })
 }

@@ -10,14 +10,24 @@ const image_uri = 'https://wpimg.wallstcn.com/e4558086-631c-425c-9430-56ffb46e70
 for (let i = 0; i < count; i++) {
   List.push(Mock.mock({
     id: '@increment',
-    username: '130xxxxx',
-    nickname: '@first',
-    role: '我是测试数据',
-    actualName: baseContent,
-    avator: 'https://wpimg.wallstcn.com/f778738c-e4f8-4870-b634-56703b4acafe.gif?imageView2/1/w/80/h/80',
-    email: '995011833@qq.com',
+    productName: '闲置物品' + i,
+    count: i,
+    price: i,
+    totalPrice: i,
+    userId: '发布者',
+    consignee: '广技师',
+    phone: 'miao shu',
+    pay: '标题',
+    delivery: 9,
+    address: 0,
+    confirm: i,
+    paidTime: '详细地址',
+    deliveryTime: '@datetime',
+    confirmTime: '@datetime',
+    postalCode: i,
+    // url: 'https://wpimg.wallstcn.com/f778738c-e4f8-4870-b634-56703b4acafe.gif?imageView2/1/w/80/h/80',
     createdTime: '@datetime',
-    status: 'published'
+    updateTime: '@datetime'
   }))
 }
 
@@ -40,13 +50,13 @@ export default {
 
     return {
       total: mockList.length,
-      items: pageList
+      records: pageList
     }
   },
   getPv: () => ({
     pvData: [{ key: 'PC', pv: 1024 }, { key: 'mobile', pv: 1024 }, { key: 'ios', pv: 1024 }, { key: 'android', pv: 1024 }]
   }),
-  getArticle: (config) => {
+  getOrder: (config) => {
     const { id } = param2Obj(config.url)
     for (const article of List) {
       if (article.id === +id) {
@@ -54,10 +64,10 @@ export default {
       }
     }
   },
-  createArticle: () => ({
+  createOrder: () => ({
     data: 'success'
   }),
-  updateArticle: () => ({
+  updateOrder: () => ({
     data: 'success'
   })
 }
